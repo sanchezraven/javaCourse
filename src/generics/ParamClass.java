@@ -11,6 +11,15 @@ public class ParamClass {
         System.out.println(info2);
         Integer i1 = info2.getValue();
     }
+
+    /* у jvm стираются jenerics, и методы одинаковые
+    public void abc (Info<String> info) {
+        String s = info.getValue();
+    }
+    public void abc (Info<Integer> info) {
+        Integer i = info.getValue();
+    }
+    */
 }
 
 class Info <T> {
@@ -26,3 +35,17 @@ class Info <T> {
         return value;
     }
 }
+/* нельзя переопределить type erasure
+class Parent {
+    public void abc (Info<String> info) {
+        String s = info.getValue();
+    }
+}
+
+class Child extends Parent {
+    public void abc (Info<Integer> info) {
+        Integer s = info.getValue();
+    }
+}
+
+ */
