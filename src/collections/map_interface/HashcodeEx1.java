@@ -23,10 +23,16 @@ public class HashcodeEx1 {
     }
 }
 
-class Student {
-    String name;
-    String surname;
-    int course;
+class Student implements Comparable<Student>{
+    final String name;
+    final String surname;
+
+    @Override
+    public int compareTo(Student o) {
+        return this.name.compareTo(o.name);
+    }
+
+    final int course;
 
     public Student(String name, String surname, int course) {
         this.name = name;
