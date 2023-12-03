@@ -12,11 +12,17 @@ public class Test2 {
         Student st4 = new Student("Masaha", 'f', 24, 5, 4.5);
         Student st5 = new Student("Remvbo", 'm', 43, 1, 23.1);
         List<Student> students = new ArrayList<>();
+        List<Student> sortedStudents;
         students.add(st1);
         students.add(st2);
         students.add(st3);
         students.add(st4);
         students.add(st5);
+
+        sortedStudents = students.stream().sorted( (x,y) ->
+            x.getName().compareTo(y.getName())
+        ).collect(Collectors.toList());
+        System.out.println(sortedStudents);
 
         students = students.stream().filter(e ->
                 e.getAge() > 22 && e.getAvgGrade() < 7.2)
