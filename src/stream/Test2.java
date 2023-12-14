@@ -77,4 +77,8 @@ class Student {
     public double getAvgGrade() {
         return avgGrade;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
