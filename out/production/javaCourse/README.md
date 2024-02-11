@@ -1,2 +1,2 @@
 # javaCourse
-education course
+education Java Core course
